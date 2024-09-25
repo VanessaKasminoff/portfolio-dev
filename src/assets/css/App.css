@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,5 +9,40 @@
 body {
     background-color: #2E2E2E;
     color: #ECECEC;
+    line-height: 1;
+    font-family: "Quicksand", sans-serif;
+}
+
+html {
+    font-size: 62.5%; /* percentage of user's font-size setting to achieve: font-size: 10px; so 1rem = 10px */
+}
+
+#hero {
+    padding: 9.6rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+    max-width: 140rem;
+    margin: 0 auto;
     text-align: center;
+}
+
+.hero-img {
+    border-radius: 50%;
+    filter: drop-shadow(0 0 0.80rem #DCA8FF);
+
+}
+
+.hero-heading {
+    font-size: 2.4rem;
+    font-weight: 300;
+}
+
+.hero-description {
+    font-size: 4.4rem;
+    letter-spacing: -0.5px;
 }
