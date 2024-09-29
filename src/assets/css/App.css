@@ -21,7 +21,9 @@ COLORS
 }
 
 body {
-  background-color: #2e2e2e;
+  /* background-color: #2e2e2e; */
+  background: #000000;
+  background: linear-gradient(0deg, #000000 0%, #1e1e1e 50%, #2e2e2e 100%);
   color: #ececec;
   line-height: 1;
   font-family: "Quicksand", sans-serif;
@@ -37,10 +39,10 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2e2e2e;
+  /* background-color: #2e2e2e; */
   height: 9.6rem;
   padding: 0 9.6rem;
-  border-bottom: 1px solid #3d3d3d;
+  /* border-bottom: 1px solid #3d3d3d; */
 }
 
 .logo {
@@ -73,15 +75,18 @@ html {
 /* HERO SECTION */
 
 #hero {
+  display: flex;
+  align-items: center;
   position: relative;
-  padding: 9.6rem;
+  padding: 0 9.6rem 5rem 9.6rem;
+  min-height: 100vh;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3.2rem;
+  gap: 3.6rem;
   max-width: 140rem;
   margin: 0 auto;
   text-align: center;
@@ -100,6 +105,12 @@ html {
 .hero-description {
   font-size: 4.4rem;
   letter-spacing: -0.5px;
+}
+
+.hero-down-arr {
+  margin-top: 9.6rem;
+  width: 3.6rem;
+  height: 3.6rem;
 }
 
 .hero-socials {
@@ -121,4 +132,35 @@ html {
 .social-icon:hover,
 .social-icon:active {
   filter: drop-shadow(0 0 0.5rem #dca8ff);
+}
+
+/* PROJECTS SECTION */
+
+.projects-container {
+  display: flex;
+  gap: 25rem;
+  /* overflow-x: hidden; */
+  padding: 9.6rem;
+}
+
+.projects-container:last-child {
+  padding-right: 100px;
+}
+
+.project-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.heading-tertiary {
+  font-size: 4.4rem;
+  font-weight: 500;
+}
+
+.project-description {
+  font-size: 2.2rem;
+  font-weight: 300;
 }
