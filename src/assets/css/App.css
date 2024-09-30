@@ -27,6 +27,7 @@ body {
   color: #ececec;
   line-height: 1;
   font-family: "Quicksand", sans-serif;
+  overflow-x: hidden;
 }
 
 html {
@@ -136,15 +137,15 @@ html {
 
 /* PROJECTS SECTION */
 
+.projects {
+  /* width: 130vw; */
+  /* min-height: 80vh; */
+}
+
 .projects-container {
   display: flex;
   gap: 25rem;
-  /* overflow-x: hidden; */
   padding: 9.6rem;
-}
-
-.projects-container:last-child {
-  padding-right: 100px;
 }
 
 .project-box {
@@ -163,4 +164,70 @@ html {
 .project-description {
   font-size: 2.2rem;
   font-weight: 300;
+}
+
+/* SKILLS SECTION */
+
+.skills {
+  margin-top: 9.6rem;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 9.6rem;
+}
+
+.skills-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  gap: 2rem;
+}
+
+.skill-item {
+  font-size: 2.2rem;
+  font-weight: 600;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+}
+
+.skill-item.html {
+  background-color: #E44B20;
+  /* filter: drop-shadow(0 0 0.5rem #F06423); */
+  color: #000000;
+}
+
+.skill-item.css {
+  background-color: #254CE3;
+  /* filter: drop-shadow(0 0 0.5rem #2864F0); */
+  color: #ffff;
+}
+
+.skill-item.javascript {
+  background-color: #DCB600;
+  /* filter: drop-shadow(0 0 0.5rem #F6D000); */
+  color: #000000;
+}
+
+.skill-item.react {
+  background-color: #00D7FE;
+  /* filter: drop-shadow(0 0 0.5rem #39E1FF); */
+  color: #000000;
+}
+
+.skill-item.basic {
+  background-color: #c774ff;
+  /* filter: drop-shadow(0 0 0.5rem #dca8ff); */
+  color: #000000;
+}
+
+.skills-description h2 {
+  font-size: 4.4rem;
+  font-weight: 400;
 }

@@ -1,7 +1,51 @@
+// CSS
 import "./assets/css/App.css";
+
+// REACT
+import { useEffect, useRef } from "react";
+
+// COMPONENTS
 import Header from "./components/Header";
 
+// LIBRARIES
+import Lenis from "lenis";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
 function App() {
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  const containerRef = useRef();
+
+  useGSAP(() => {
+    const sections = gsap.utils.toArray(".projects-container div");
+    // console.log(sections);
+
+    const container = containerRef.current;
+
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,
+        pin: true,
+        scrub: 1,
+        end: () => `+=${container.offsetWidth}`,
+      },
+    });
+  });
+
+  const lenis = new Lenis();
+  lenis.on("scroll", () => {});
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
   return (
     <div id="App">
       <Header />
@@ -60,7 +104,7 @@ function App() {
           </div>
         </section>
         <section className="projects">
-          <div className="projects-container">
+          <div className="projects-container" ref={containerRef}>
             <div className="project-box">
               <a href="#">
                 <img
@@ -69,7 +113,9 @@ function App() {
                 />
               </a>
               <h3 className="heading-tertiary">Project 1</h3>
-              <p className="project-description">De apocalypsi gorger omero undead survivor dictum mauris</p>
+              <p className="project-description">
+                De apocalypsi gorger omero undead survivor dictum mauris
+              </p>
             </div>
             <div className="project-box">
               <a href="#">
@@ -79,7 +125,9 @@ function App() {
                 />
               </a>
               <h3 className="heading-tertiary">Project 2</h3>
-              <p className="project-description">De apocalypsi gorger omero undead survivor dictum mauris</p>
+              <p className="project-description">
+                De apocalypsi gorger omero undead survivor dictum mauris
+              </p>
             </div>
             <div className="project-box">
               <a href="#">
@@ -89,7 +137,9 @@ function App() {
                 />
               </a>
               <h3 className="heading-tertiary">Project 3</h3>
-              <p className="project-description">De apocalypsi gorger omero undead survivor dictum mauris</p>
+              <p className="project-description">
+                De apocalypsi gorger omero undead survivor dictum mauris
+              </p>
             </div>
             <div className="project-box">
               <a href="#">
@@ -99,7 +149,24 @@ function App() {
                 />
               </a>
               <h3 className="heading-tertiary">Project 4</h3>
-              <p className="project-description">De apocalypsi gorger omero undead survivor dictum mauris</p>
+              <p className="project-description">
+                De apocalypsi gorger omero undead survivor dictum mauris
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="skills">
+          <div className="skills-container">
+            <div className="skills-icons">
+              <p className="skill-item html">HTML</p>
+              <p className="skill-item css">CSS</p>
+              <p className="skill-item javascript">JavaScript</p>
+              <p className="skill-item react">React</p>
+              <p className="skill-item basic">Git</p>
+              <p className="skill-item basic">GitHub</p>
+            </div>
+            <div className="skills-description">
+              <h2>These are my skills</h2>
             </div>
           </div>
         </section>
